@@ -1,6 +1,12 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
+    <!-- <img src="./assets/logo.png"> -->
+    <router-link to="/getPublicModel">模型超市</router-link>
+    <router-link to="/draggable">draggable</router-link>
+    <router-link to="/sort">sort</router-link>
+    <router-link to="/page/a">a页面</router-link>
+    <router-link to="/page/b">b页面</router-link>
+    <router-link to="/page/c">c页面</router-link>
     <router-view/>
   </div>
 </template>

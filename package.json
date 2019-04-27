@@ -10,7 +10,12 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "animate.css": "^3.7.0",
+    "axios": "^0.18.0",
     "element-ui": "^2.7.2",
+    "mockjs": "^1.0.1-beta3",
+    "normalize.css": "^8.0.1",
+    "qs": "^6.7.0",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1",
     "vuedraggable": "^2.20.0",

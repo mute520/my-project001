@@ -3,6 +3,24 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import Vuex from 'vuex'
+import store from './store'
+import Element from 'element-ui'
+import draggable from 'vuedraggable'
+import 'element-ui/lib/theme-chalk/index.css'
+import 'animate.css'
+import 'normalize.css'
+import '@/assets/iconfont/iconfont.css'
+
+// 动态引入mockjs
+if(process.env.NODE_ENV === 'development') {
+  require('./mock')
+  // import('./mock')
+}
+
+Vue.use(Vuex)
+Vue.use(Element)
+Vue.component('draggable', draggable)
 
 Vue.config.productionTip = false
 
@@ -10,6 +28,7 @@ Vue.config.productionTip = false
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })
