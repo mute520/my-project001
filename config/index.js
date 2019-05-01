@@ -3,6 +3,7 @@
 // see http://vuejs-templates.github.io/webpack for documentation.
 
 const path = require('path')
+// const proxyConfig = require('./vue.config.js')
 
 module.exports = {
   dev: {
@@ -10,7 +11,9 @@ module.exports = {
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
+    // proxyTable: {},
+    // proxyTable: proxyConfig.devServer.proxy,
+    
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST
@@ -18,6 +21,16 @@ module.exports = {
     autoOpenBrowser: true,
     errorOverlay: true,
     notifyOnErrors: true,
+    proxyTable: {
+      '/api': {
+        // target: 'http://10.113.80.60:8083/',
+        target: 'http://localhost:80/',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/api': '/'
+        }
+      }
+    },
     poll: false, // https://webpack.js.org/configuration/dev-server/#devserver-watchoptions-
 
     
